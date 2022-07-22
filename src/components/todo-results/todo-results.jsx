@@ -3,10 +3,17 @@ import "./todo-results.css";
 import { TodosContext } from "../../todo-context";
 
 export const TodoResults = () => {
-  const { done } = React.useContext(TodosContext)
-
+  const { todos } = React.useContext(TodosContext)
+  let count = 0
   const calculateChecked = () => {
+    for (var i = 0; i < todos.length; i++) {
+      if (todos[i].complete) {
+        count++
 
+      }
+
+    }
+    return count
 
   };
 
